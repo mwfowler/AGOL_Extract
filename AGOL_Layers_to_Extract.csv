@@ -1,0 +1,4 @@
+ACTIVE,WEB_LAYER,SERVICE_URL,QUERY ,OUT_PG_SCHEMA,OUT_GPKG,OUT_TABLE,COMMENTS
+N,Rec Sites and Trails Polygons,https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/Rec_Sites_and_Trails_Polygons/FeatureServer/14,,agol,C:\Temp\AGOL_Test_Export.gpkg,rec_sites_trails_polygons,Rec Site Polygons
+Y,Rec Sites and Trails Polygons,https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/Rec_Sites_and_Trails_Polygons/FeatureServer/14,PROJECT_NAME = 'Eternal Fountain',agol,C:\Temp\AGOL_Test_Export.gpkg,rec_sites_trails_polygons,Rec Site Polygons - Eternal Fountain
+Y,Aerial Overview Survey Points - 2024,https://services6.arcgis.com/ubm4tcTYICKBpist/arcgis/rest/services/AOS_Pest_Infestation_Points/FeatureServer/13,PEST_SPECIES_CODE =  'IBB',agol,C:\Temp\AGOL_Test_Export.gpkg,aos_points_2024,AOS Points - 2024 - IBB
