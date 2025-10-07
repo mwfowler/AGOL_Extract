@@ -14,9 +14,18 @@ library(DBI)
 library(RPostgres)
 library(glue)
 library(tidyverse)
-#install.packages("htmlTable")
-#library(htmlTable)
 library(RDCOMClient)
+#-------------------------------------------------------------------------------
+#--Variable Values
+#-------------------------------------------------------------------------------
+pg_db = "prov_data"
+pg_host = "localhost"
+pg_port = 5432
+pg_user = "postgres"
+pg_password = "postgres"
+input_file <- "AGOL_Layers_to_Extract.csv"
+agol_portal <- "https://governmentofbc.maps.arcgis.com"
+email_to <- 'mike.fowler@gov.bc.ca'
 #-------------------------------------------------------------------------------
 #--Functions
 #-------------------------------------------------------------------------------
@@ -75,15 +84,18 @@ sendEmail <- function(to,subject,body,html=FALSE){
 time_delta <- function(time1, time2){
   time_diff = ""
   if(as.numeric(difftime(time2, time1, units = "secs"))<60){
-    time_diff <- glue(difftime(time2, time1, units = "secs"), ' Seconds')
+    time_diff <- glue(round(difftime(time2, time1, units = "secs"),2), ' Seconds')
   }else if(as.numeric(difftime(time2, time1, units = "mins"))<60){
-    time_diff <- glue(difftime(time2, time1, units = "mins"), ' Minutes')
+    time_diff <- glue(round(difftime(time2, time1, units = "mins"),2), ' Minutes')
   }else{
-    time_diff <- glue(difftime(time2, time1, units = "hours"), ' Hours')
+    time_diff <- glue(round(difftime(time2, time1, units = "hours"),4), ' Hours')
   }
   return(time_diff)
 }
-main <- function (){
+main <- function(input_file,
+                 agol_portal, 
+                 pg_db,pg_host,pg_port,pg_user,pg_password,
+                 email_to){
   tryCatch(
     {
     #--Suppress warnings
@@ -91,15 +103,15 @@ main <- function (){
     #-------------------------------------------------------------------------------
     #--Postgres connection information 
     #-------------------------------------------------------------------------------
-    pg_db = "prov_data"
-    pg_host = "localhost"
-    pg_port = 5432
-    pg_user = "postgres"
-    pg_password = "postgres"
+    # pg_db = "prov_data"
+    # pg_host = "localhost"
+    # pg_port = 5432
+    # pg_user = "postgres"
+    # pg_password = "postgres"
     #--directory where this script is located
     #dir <- dirname(rstudioapi::getSourceEditorContext()$path)
     dir <- getCurrentFileLocation()
-    csv_file <- glue(dir, '\\AGOL_Layers_to_Extract.csv')
+    csv_file <- file.path(dir, input_file)
     wd <- dir
     #-------------------------------------------------------------------------------
     #--Get a authorization token to our AGOL Portal 
@@ -107,7 +119,7 @@ main <- function (){
     token <- arcgisutils::auth_user(
       username = Sys.getenv("ARCGIS_USER"),
       password = Sys.getenv("ARCGIS_PASSWORD"),
-      host = "https://governmentofbc.maps.arcgis.com",
+      host = agol_portal,
       expiration = 60
     )
     arcgisutils::set_arc_token(token)
@@ -222,7 +234,7 @@ main <- function (){
                      "\n")
     }
     subj <- paste0("AGOL Extract: ", datestr)
-    email_sent <- sendEmail(to='mike.fowler@gov.bc.ca',
+    email_sent <- sendEmail(to=email_to,
                subject=subj,
                body=body,html=FALSE)
     
@@ -236,4 +248,7 @@ main <- function (){
 }
 #---------------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------
-main()
+#main()
+main(input_file,agol_portal, 
+     pg_db,pg_host,pg_port,pg_user,pg_password,
+     email_to)
