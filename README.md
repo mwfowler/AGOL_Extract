@@ -1,4 +1,4 @@
-# dadmtools
+# AGOL_Extract
 Package of common FAIB Data Analysis and Data Management team functions, focusing on functions to import vector into PG in the gr_skey grid lookup table.
 
 ### 1. Install supporting software on PC
@@ -237,7 +237,7 @@ Vector attribute table: `sandbox.adm_nr_districts_sp`
 Raster attribute table: `sandbox.adm_nr_districts_sp_gr_skey`
 
 Entity Relationship diagram for newly imported tables:
-![Image](https://github.com/user-attachments/assets/802bacd8-1222-4b83-9da5-b36570d271b1)
+![Image](https://github.com/mwfowler/AGOL_Extract/blob/main/Images/AGOL_Extract_Graphic_DBeaver_TransparentBackground.png)
 
 Since each row in `sandbox.adm_nr_districts_sp_gr_skey` represents one hectare, this structure makes it easy to perform area calculations and join with other table that contain `gr_skey`. Example query calculating area in hectares by Natural Resource District:
 ```
