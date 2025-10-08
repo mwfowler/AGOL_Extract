@@ -1,0 +1,20 @@
+Package: AGOLextract
+Title: ArcGIS Online (AGOL) Extract to SQL Database
+Version: 0.0.1
+Authors@R: 
+    person("Mike", "Fowler", , "mike.fowler@gov.bc.ca", role = c("aut", "cre"))
+Description: This package will take an input CSV defining AGOL Feature Layers to be extracted to Postgres and/or Geopackage SQL compliant databases.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+	arcgis (>= 0.2.0),
+	arcgisutils (>= 0.4.0),
+	sf (>= 1.0-21),
+	DBI (>= 1.2.3),
+	RPostgres (>= 1.4.8),
+	glue (>= 1.8.0),
+	tidyverse (>= 2.0.0),
+	RDCOMClient (>= 0.96-1)
