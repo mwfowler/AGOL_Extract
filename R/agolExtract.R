@@ -60,7 +60,7 @@ agolExtract <- function(input_file,
       for (i in 1:nrow(input_csv)) {
         #--Only process the active records
         if (input_csv$ACTIVE[i]=='Y'){
-          time_start <- as.POSIXct(now())
+          time_start <- as.POSIXct(lubridate::now())
           #--Pull the values from the CSV into variables
           web_layer <- input_csv$WEB_LAYER[i]
           #layer_index <- input_csv$LAYER_INDEX[i]
@@ -125,7 +125,7 @@ agolExtract <- function(input_file,
             #-Disconnect from Postgres
             DBI::dbDisconnect(conn)
           }
-          time_end <- as.POSIXct(now())
+          time_end <- as.POSIXct(lubridate::now())
           time_elapse <- AGOLextract::timeDelta(time_start, time_end)
           print('')
           print('Processing Complete')
