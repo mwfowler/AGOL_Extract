@@ -8,13 +8,12 @@
 #'
 #' @examples coming soon
 #' 
-
-#--This could be a stumbling block for other package users
-#--May need to be clear in the README.md that you need to download and have this installed from a specific 
-#--repo before installing the agolextract package 
-#--devtools::install_github("omegahat/RDCOMClient")
-library(RDCOMClient) 
 sendEmail <- function(to,subject,body){
+  #--This could be a stumbling block for other package users
+  #--May need to be clear in the README.md that you need to download and have this installed from a specific 
+  #--repo before installing the agolextract package 
+  #--devtools::install_github("omegahat/RDCOMClient")
+  require(RDCOMClient) 
   
   OutlookOpenAlready <- AGOLextract::isOutlookRunning()
   OutApp <- COMCreate("Outlook.Application")
