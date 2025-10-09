@@ -17,6 +17,6 @@ Imports:
 	RPostgres (>= 1.4.8),
 	glue (>= 1.8.0),
 	tidyverse (>= 2.0.0)
-	dply (>= 1.1.4)
+	dplyr (>= 1.1.4)
 Depends:
 	RDCOMClient (>= 0.96-1)
