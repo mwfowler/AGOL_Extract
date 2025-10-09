@@ -158,7 +158,7 @@ agolExtract <- function(input_file,
         subj <- paste0("AGOL Extract: ", datestr)
         email_sent <- agolextract::sendEmail(to=email_to,
                                 subject=subj,
-                                body=body,html=FALSE)
+                                body=body)
         
       }  
     },
