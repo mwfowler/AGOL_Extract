@@ -35,7 +35,7 @@ agolExtract <- function(input_file,
       #--directory where this script is located
       #dir <- getCurrentFileLocation()
       csv_file <- input_file
-      csv_file <- file.path(dir, input_file)
+      #csv_file <- file.path(dir, input_file)
       #wd <- dir
       #-------------------------------------------------------------------------------
       #--Get a authorization token to our AGOL Portal 
