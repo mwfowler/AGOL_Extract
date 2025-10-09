@@ -21,3 +21,6 @@ Graphic of the Process:
 
 ![Image](https://github.com/mwfowler/AGOL_Extract/blob/main/Images/AGOL_Extract_Graphic_DBeaver_TransparentBackground.png)
 
+Input CSV Format:
+
+![Image](https://github.com/mwfowler/AGOL_Extract/blob/main/Images/Input_CSV_Format.png)
