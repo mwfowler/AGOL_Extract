@@ -12,7 +12,6 @@ agolExtract(
   pg_port,
   pg_user,
   pg_password,
-  email = TRUE,
   email_to
 )
 }
@@ -31,9 +30,7 @@ agolExtract(
 
 \item{pg_password}{string:  password of the destination Postgres database (if applicable)}
 
-\item{email}{boolean: whether to send an email after extraction}
-
-\item{email_to}{string: email address to send to}
+\item{email_to}{string: email address to send to, if blank/NA then no email sent}
 
 \item{resultant_table}{name of the existing resultant table.}
 }

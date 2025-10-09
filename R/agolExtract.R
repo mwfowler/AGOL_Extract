@@ -15,8 +15,7 @@
 #' @param pg_user string:  user of the destination Postgres database (if applicable)
 #' @param pg_password string:  password of the destination Postgres database (if applicable)
 #' @param resultant_table name of the existing resultant table.
-#' @param email boolean: whether to send an email after extraction 
-#' @param email_to string: email address to send to 
+#' @param email_to string: email address to send to, if blank/NA then no email sent
 #'
 #' @return nothing is returned
 #' @export
@@ -25,7 +24,6 @@
 agolExtract <- function(input_file,
                  agol_portal, 
                  pg_db,pg_host,pg_port,pg_user,pg_password,
-                 email=TRUE,
                  email_to){
   tryCatch(
     {
@@ -142,7 +140,7 @@ agolExtract <- function(input_file,
       #-------------------------------------------------------------------------------
       #---Send an email here
       #-------------------------------------------------------------------------------
-      if(email==TRUE){
+      if(!is.na(email) | trimws(email) != ""){
         datestr <- format(Sys.time(), '%A, %B %d, %Y %H:%M:%S')
         body <- ""
         for (j in 1:nrow(log_df)) {
