@@ -1,4 +1,4 @@
-Package: AGOLextract
+Package: agolextract
 Title: ArcGIS Online (AGOL) Extract to SQL Database
 Version: 0.0.1
 Authors@R: 
