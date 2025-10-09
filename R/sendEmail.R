@@ -15,7 +15,7 @@ sendEmail <- function(to,subject,body){
   #--devtools::install_github("omegahat/RDCOMClient")
   require(RDCOMClient) 
   
-  OutlookOpenAlready <- AGOLextract::isOutlookRunning()
+  OutlookOpenAlready <- agolextract::isOutlookRunning()
   OutApp <- COMCreate("Outlook.Application")
   outMail <- OutApp$CreateItem(0) # 0 represents olMailItem
   outMail[["To"]] <- to

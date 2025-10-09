@@ -124,7 +124,7 @@ agolExtract <- function(input_file,
             DBI::dbDisconnect(conn)
           }
           time_end <- as.POSIXct(lubridate::now())
-          time_elapse <- AGOLextract::timeDelta(time_start, time_end)
+          time_elapse <- agolextract::timeDelta(time_start, time_end)
           print('')
           print('Processing Complete')
           print(glue::glue('Time Finished: {time_end}'))
@@ -156,7 +156,7 @@ agolExtract <- function(input_file,
                          "\n")
         }
         subj <- paste0("AGOL Extract: ", datestr)
-        email_sent <- AGOLextract::sendEmail(to=email_to,
+        email_sent <- agolextract::sendEmail(to=email_to,
                                 subject=subj,
                                 body=body,html=FALSE)
         
