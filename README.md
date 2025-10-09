@@ -16,5 +16,7 @@ Package of common FAIB Data Analysis and Data Management team functions, focusin
   - ARCGIS_PASSWORD - AGOL Password
 
 
+Graphic of the Process:
 
+![Image](https://github.com/mwfowler/AGOL_Extract/blob/main/Images/AGOL_Extract_Graphic_DBeaver_TransparentBackground.png)
 
