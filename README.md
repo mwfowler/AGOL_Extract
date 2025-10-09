@@ -5,10 +5,11 @@ Package of common FAIB Data Analysis and Data Management team functions, focusin
 
 ### RDCOMClient Package in R 
   - For sending emails 
-  install from this repo: devtools::install_github("omegahat/RDCOMClient")
+  install from this repo: 
+  - devtools::install_github("omegahat/RDCOMClient")
 
 #### Postgres
- -If exporting AGOL data to Posgtres a local server with PostGIS enabled is required install the dependancies for `postgis` and `postgis_raster`. 
+  -If exporting AGOL data to Posgtres a local server with PostGIS enabled is required
 
 ### 2. Environment Variables 
   - The following Environment Variables need to be set
