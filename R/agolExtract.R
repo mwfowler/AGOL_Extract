@@ -112,7 +112,7 @@ agolExtract <- function(input_file,
             #--Write the layer out to Postgres
             sf::st_write(obj = sf_object,
                      dsn = conn,
-                     Id(schema=out_schema, 
+                     DBI::Id(schema=out_schema, 
                         table = tolower(out_table)),
                      append = FALSE, # Set to TRUE to append data to an existing table
                      delete_layer = TRUE)
