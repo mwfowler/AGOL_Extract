@@ -1,6 +1,17 @@
 # AGOL_Extract
 Package of common FAIB Data Analysis and Data Management team functions, focusing on functions to import vector into PG in the gr_skey grid lookup table.
 
+### Contact
+
+If you have any questions or inquiries about this R package contact:
+<p style="text-align:center;">
+Mike Fowler
+Data Scientist
+Office of the Chief Forester - Forest Science, Planning & Practices
+mike.fowler@gov.bc.ca
+</p>
+
+
 ### 1. Requirements
 
 ### RDCOMClient Package in R 
