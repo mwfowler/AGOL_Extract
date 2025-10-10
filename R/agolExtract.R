@@ -140,7 +140,7 @@ agolExtract <- function(input_file,
       #-------------------------------------------------------------------------------
       #---Send an email here
       #-------------------------------------------------------------------------------
-      if(!is.na(email) | trimws(email) != ""){
+      if(!is.na(email_to) | trimws(email_to) != ""){
         datestr <- format(Sys.time(), '%A, %B %d, %Y %H:%M:%S')
         body <- ""
         for (j in 1:nrow(log_df)) {
