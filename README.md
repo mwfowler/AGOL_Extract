@@ -5,10 +5,10 @@ Package of common FAIB Data Analysis and Data Management team functions, focusin
 
 If you have any questions or inquiries about this R package contact:
 
-Mike Fowler 
-Data Scientist 
-Office of the Chief Forester - Forest Science, Planning & Practices 
-mike.fowler@gov.bc.ca 
+Mike Fowler   
+Data Scientist  
+Office of the Chief Forester - Forest Science, Planning & Practices  
+mike.fowler@gov.bc.ca  
 
 ### 1. Requirements
 
