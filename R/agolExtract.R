@@ -24,7 +24,7 @@
 agolExtract <- function(input_file,
                  agol_portal, 
                  pg_db,pg_host,pg_port,pg_user,pg_password,
-                 email_to){
+                 email_to=NA){
   tryCatch(
     {
       #--Suppress warnings
